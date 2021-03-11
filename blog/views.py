@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+#lets import the posts .models just means lets use models in this directory
+from .models import Post
+
+
 posts = [
     {
         'author': 'Dennis',
@@ -20,7 +24,7 @@ posts = [
 def home(request):
     #creating a dictionary for the content of the post
     context = {
-        'posts': posts
+        'posts': Post.objects.all() #takes all the posts in the database
     }
     #passing the context to the template will allow us to access it in template
     return render(request, 'blog/home.html', context)
