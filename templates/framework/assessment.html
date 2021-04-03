@@ -1,0 +1,106 @@
+{%  extends 'blog/base.html' %}
+{% block content %}
+    <div class="row">
+    <div class="col-md-8">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url "framework-home" %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Assessment</li>
+          </ol>
+        </nav>
+        <div class="card mb-3" >
+            <div class="card-body">
+                <h2 class="card-title">Assessment - Guidelines</h2>
+                <hr class="my-3">
+            </div>
+        </div>
+        <div class="card mb-3" id="formative">
+            <h5 class="card-header">Formative Assessments</h5>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">Assessments</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">Use check-ins as informal questions that can be posed either at the beginning, middle, or end of the lesson to gauge student understanding of the topic or concept being covered.</li>
+                    <li class="list-group-item">Use exit tickets  as a quick written responses that students submit at the end of class to show their understanding of the lesson that was presented. This  assists the educator in adjusting instruction if needed.</li>
+                    <li class="list-group-item">Assessments can be done independently at the learner’s pace</li>
+                    <li class="list-group-item">Online webtools can be used formative assessment like Socrative, Kahoot, and Nearpod, Google Classroom, Google Forms.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-3" id="summative">
+            <h5 class="card-header">Summative Assessments</h5>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">Assessments</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">Use performance-based strategies like portfolios or  projects to measure learning standards and objectives. They provide the learner the opportunity to apply and showcase what was learned.</li>
+                    <li class="list-group-item">Use oral presentations in order to allow the learner to explain their thinking and understanding of topics or concepts.</li>
+                    <li class="list-group-item">Allow for students to create products to demonstrate learning. It promotes higher level of thinking.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-3" id="quiz" >
+            <h5 class="card-header">Quizzes</h5>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">Assessments</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">Monitoring quizzes in-person is possible as students work through questions</li>
+                    <li class="list-group-item">Online blended courses should turn quizzing into a learning activity as opposed to an assessment activity.</li>
+                    <li class="list-group-item">When Quizzes are given online, they should be given so that the educator is aware of what to focus on when the students are in-person.</li>
+                    <li class="list-group-item">Online quizzing tools can be used to provide randomization of test items.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-3" id="test">
+            <h5 class="card-header">Testing</h5>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">Assessments</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">Formal testing should be used during in-person lessons only but is not recommended in a blended learning environment.</li>
+                    <li class="list-group-item">Online tests make for easy and quick grading by the instructor or teaching assistant, but security of the test might be diminished depending on the software and implementation methods used by the instructor</li>
+                    <li class="list-group-item">Students should be allowed to use feedback from their teachers or peers to revise their work.</li>
+                    <li class="list-group-item">Allow students to submit three to five test questions each. This gives the teacher the ability to see the content that the students think is important then address areas that students did not cover in their question</li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+        <!--This is the right side panel-->
+    <div class="col-md-4">
+        <div class="jumbotron">
+            <h1 class="display-4">Assessment</h1>
+            <p class="lead">
+              When designing a course or lesson for Blended Learning. It is always important continuely
+              assess your learners understanding of the materials in order to support the users.
+            </p>
+            <p><a href="#formative" class="card-link">Formative Assessment Techniques</a></p>
+            <p><a href="#summative" class="card-link">Summative Assessment Techniques</a></p>
+            <p><a href="#quiz" class="card-link">Guidelines for Quizzes</a></p>
+            <p><a href="#test" class="card-link">Guidelines for Testing</a></p>
+
+        </div>
+        <div class="list-group mb-3">
+          <button type="button" class="list-group-item list-group-item-action active">
+            Resource Links
+          </button>
+            <a type="button" href="https://www.socrative.com/" class="list-group-item list-group-item-action">Socrative (Formative Assessment)</a>
+            <a type="button" href="https://kahoot.com/" class="list-group-item list-group-item-action">Kahoot (Formative Assessment)</a>
+            <a type="button" href="https://nearpod.com/" class="list-group-item list-group-item-action">Nearpod (Formative Assessment)</a>
+            <a type="button" href="https://www.screencastify.com/" class="list-group-item list-group-item-action">Sreencastify (Summative Assessment)</a>
+            <a type="button" href="https://workspace.google.com/products/sites/" class="list-group-item list-group-item-action">Google Sites (Summative Assessment)</a>
+            <a type="button" href="https://www.canva.com" class="list-group-item list-group-item-action">Canva (Summative Assessment)</a>
+            <a type="button" href="https://studio.youtube.com/" class="list-group-item list-group-item-action">YouTube Studio (Summative Assessment)</a>
+        </div>
+        <div class="list-group mb-3">
+          <button type="button" class="list-group-item list-group-item-action active">
+            Guidelines
+          </button>
+            <a type="button" href="{% url 'framework-course-design' %}" class="list-group-item list-group-item-action">Course Design</a>
+            <a type="button" href="#" class="list-group-item list-group-item-action">Assessment</a>
+            <a type="button" href="{% url 'framework-activities' %}" class="list-group-item list-group-item-action">Activities</a>
+            <a type="button" href="{% url 'framework-technology' %}" class="list-group-item list-group-item-action">Technology and Tools</a>
+            <a type="button" href="{% url 'framework-professional' %}" class="list-group-item list-group-item-action">Professional Development</a>
+        </div>
+    </div>
+    </div>
+
+{%  endblock content %}

@@ -1,0 +1,94 @@
+{%  extends 'blog/base.html' %}
+{% block content %}
+    <div class="row">
+    <div class="col-md-8">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url "framework-home" %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Course Design</li>
+          </ol>
+        </nav>
+        <div class="card mb-3" id="technology">
+            <div class="card-body">
+                <h2 class="card-title">Technology and Tools - Guidelines</h2>
+                <hr class="my-3">
+            </div>
+        </div>
+        <div class="card mb-3" >
+            <h5 class="card-header">Developing a Shared Technology Strategy</h5>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">Technology and Tools</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">Provide an overview of the main types of eLearning, with working labels for each.</li>
+                    <li class="list-group-item">List practical examples of successful eLearning programs which have delivered performance improvements and business results and the technology used.</li>
+                    <li class="list-group-item">Develop a guide to the different types of LMS in the market (self-paced platforms, corporate LMSs, education LMSs, virtual learning environments), their key function sets and typical add-ons</li>
+                    <li class="list-group-item">Provide a quick overview of the capabilities required to support eLearning effectively.</li>
+                    <li class="list-group-item">Plan for the future, not just the present. It is important not only to focus on what you need now but what you might need in the near future.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-3" >
+            <h5 class="card-header">Implementation Strategy for Technology and Tools</h5>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">Technology and Tools</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">Identify the problem blended learning will solve before buying any devices or tools.</li>
+                    <li class="list-group-item">Build out the back-end infrastructure to ensure sufficient connectivity to support the selected blended learning structural approach.</li>
+                    <li class="list-group-item">Use creative ways to overcome community network limitations. Look at adding additional service antennae on school and city buildings and installed Wi-Fi hotspots in the homes of school employees and students to provide extended wireless connectivity.</li>
+                    <li class="list-group-item">Be prepared for integration: it often is not easy.</li>
+                    <li class="list-group-item">Scope out the project with what needs to be integrated, and what modifications to current applications may be required.</li>
+                    <li class="list-group-item">Plan for a staged implementation process for your LMS based on the scoping findings.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-3" id="lms">
+            <h5 class="card-header">Choosing the right LMS System</h5>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">LMS System</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">Use your vision of learning and development to drive selection. Create a high-level statement of where you want to get to, and why. It outlines your business goals for the investment.</li>
+                    <li class="list-group-item">Talk with vendors and look at different LMS systems. Before you begin the formal request stage, ask some venders to do a demo</li>
+                    <li class="list-group-item">Define your audience on who you would like to train.</li>
+                    <li class="list-group-item">Determine the type of LMS system you would like to implement a cloud-based solution or an internally hosted LMS system.</li>
+                    <li class="list-group-item">Determine the key features you are looking for. Some are: Customization and Branding, Integrations, Security, Native Mobile Apps, Reporting, Assessments and Surveys, Certifications, Gamification, Communication tools, SCORM and Tin Can Compliance, E-commerce and many more.</li>
+                    <li class="list-group-item">Determine the type of support you are expecting from a vendor, Phone support, online support, knowledge base and video tutorials.</li>
+                    <li class="list-group-item">Determine your budget. Are you looking for a Free LMS tool that is opensource or a commercial version.</li>
+                    <li class="list-group-item">Test Drive the system by requesting a demo,  free trial or utilizing a freemium version of the software.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        <!--This is the right side panel-->
+    <div class="col-md-4">
+        <div class="jumbotron">
+          <h1 class="display-4">Technology and Tools</h1>
+          <p class="lead">When designing a course or lesson for Blended Learning. These are some important guidelines that you should follow along with trhings to avoid when designing your course</p>
+            <p><a href="#technology" class="card-link">Technology Guidelines</a></p>
+            <p><a href="#lms" class="card-link">Selecting the Right LMS</a></p>
+
+
+        </div>
+        <div class="list-group mb-3">
+          <button type="button" class="list-group-item list-group-item-action active">
+            Resource Links
+          </button>
+            <a type="button" href="https://www.youtube.com" class="list-group-item list-group-item-action">YouTube</a>
+            <a type="button" href="https://www.flipgrid.com" class="list-group-item list-group-item-action">Flipgrid</a>
+            <a type="button" href="https://www.youtube.com/c/smartereveryday/featured" class="list-group-item list-group-item-action">Smarter Everyday</a>
+            <a type="button" href="https://www.youtube.com/channel/UCtFRv9O2AHqOZjjynzrv-xg" class="list-group-item list-group-item-action">YouTube Learning</a>
+            <a type="button" href="https://www.khanacademy.org" class="list-group-item list-group-item-action">Khan Academy</a>
+        </div>
+        <div class="list-group mb-3">
+          <button type="button" class="list-group-item list-group-item-action active">
+            Guidelines
+          </button>
+            <a type="button" href="{% url 'framework-course-design' %}" class="list-group-item list-group-item-action">Course Design</a>
+            <a type="button" href="{% url 'framework-assessment' %}" class="list-group-item list-group-item-action">Assessment</a>
+            <a type="button" href="{% url 'framework-activities' %}" class="list-group-item list-group-item-action">Activities</a>
+            <a type="button" href="#" class="list-group-item list-group-item-action">Technology and Tools</a>
+            <a type="button" href="{% url 'framework-professional' %}" class="list-group-item list-group-item-action">Professional Development</a>
+        </div>
+    </div>
+    </div>
+
+{%  endblock content %}

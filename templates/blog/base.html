@@ -19,7 +19,7 @@
   </head>
   <body>
     <header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
         <div class="container">
           <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">BL Framework</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,8 +27,21 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
-              <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
+                <a class="nav-item nav-link" href="{% url 'framework-home' %}">Home</a>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Guidelines</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'framework-course-design' %}">Course Design</a>
+                        <a class="dropdown-item" href="{% url 'framework-assessment' %}">Assessment</a>
+                        <a class="dropdown-item" href="{% url 'framework-activities' %}">Activities</a>
+                        <a class="dropdown-item" href="{% url 'framework-technology' %}">Technology and Tools</a>
+                        <a class="dropdown-item" href="{% url 'framework-professional' %}">Professional Development</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Mental Health</a>
+                    </div>
+                </li>
+                <a class="nav-item nav-link" href="{% url 'blog-home' %}">Resources</a>
+                <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">

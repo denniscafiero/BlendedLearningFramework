@@ -1,0 +1,203 @@
+{%  extends 'blog/base.html' %}
+{% block content %}
+    <div class="row">
+    <div class="col-md-8">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url "framework-home" %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Activities</li>
+          </ol>
+        </nav>
+        <div class="card mb-3" id="online">
+            <div class="card-body">
+                <h2 class="card-title">Online Activity - Guidelines</h2>
+                <hr class="my-3">
+            </div>
+        </div>
+        <div class="card mb-3" >
+            <h5 class="card-header">Present Content Online for Flexibility and Efficiency</h5>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">Online Activities</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">Provide flexibility to students  so that they can work through web pages, watch video presentations, or listen to lectures when they want, adjusting the pace or speed as desired.</li>
+                    <li class="list-group-item">Provide portability where students can consume digital content on the go through mobile devices.</li>
+                    <li class="list-group-item">Efficiently use carefully scripted online presentations that are concise that eliminate redundancies, pauses, and sidetracks.</li>
+                    <li class="list-group-item">Design lectures that can be reused to save time and reuse content shared by other teachers.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-3" >
+            <h5 class="card-header">Foster Community through Discussion Forums</h5>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">Online Activities</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">Class discussions provide opportunities for teachers to engage students in deeper exploration of a topic than content can provide.</li>
+                    <li class="list-group-item">Discussions should be used to test a students understanding, ask questions, and debate points.</li>
+                    <li class="list-group-item">Discussions foster the development of community, which is fundamental to student learning in the higher levels of the cognitive domain.</li>
+                    <li class="list-group-item">Discussion forums promote the ability to interact asynchronously, that is, not in real-time and allow all students to participate because time and place constraints are removed.</li>
+                    <li class="list-group-item">Use discussion forums to reduce the social pressures of face-to-face interaction.</li>
+                    <li class="list-group-item">Use discussion forums as an opportunity for to reflect on the topic, provide evidence for their claims, and edit their responses.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-3" >
+            <h5 class="card-header">Design Digital Content to Be Simple and Accessible</h5>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">Online Activities</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">Use headings and subheadings. This helps readers navigate and summarizes ideas.</li>
+                    <li class="list-group-item">Leave plenty of white space in the margins. This helps readers focus on the text.</li>
+                    <li class="list-group-item">Use high-contrast text and background colors (black and white is fine). This ensures visibility.</li>
+                    <li class="list-group-item">Use a single, simple font in a standard size. This supports basic readability.</li>
+                    <li class="list-group-item">Space lines between 1.25x and 1.5. This helps reading speed.</li>
+                    <li class="list-group-item">Eliminate purely decorative images or media. These can distract students or create extraneous cognitive load.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-3" >
+            <h5 class="card-header">Tips for Creating Digital Video Presentations</h5>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">Online Activities</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">Keep it simple. The content is more important than production value.</li>
+                    <li class="list-group-item">Keep each video brief—around ten minutes. Allows videos to be more portable and reusable. And keeps a users natural attention span.</li>
+                    <li class="list-group-item">Be yourself. Create a human connection with your students.</li>
+                    <li class="list-group-item">Use screen recording software when you want to record walkthroughs of software or websites that students need to learn.</li>
+                    <li class="list-group-item">If possible, use a high-quality microphone if you plan to record many videos or audio files.</li>
+                    <li class="list-group-item">Make sure your videos are readily available via a LMS or social media like YouTube or Vimeo.</li>
+                    <li class="list-group-item">Presentation slides are not enough. Slides are designed to support live presentation.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-3" id="inperson">
+            <div class="card-body">
+                <h2 class="card-title">In-Person Activity - Guidelines</h2>
+                <hr class="my-3">
+            </div>
+        </div>
+        <div class="card mb-3" >
+            <h5 class="card-header">
+                Make Onsite Learning Active
+            </h5>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">In-Person Activities</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        In-Person learning experience should be be more engaging and effective.
+                    </li>
+                    <li class="list-group-item">
+                        Teachers and students should maximize onsite time by taking advantage of the strengths of the environment through hands-on activities.
+                    </li>
+                    <li class="list-group-item">
+                        The flipped classroom model should be implemented by putting lectures or presentations online in order to save onsite time for hands-on or supported activities.
+                    </li>
+                    <li class="list-group-item">
+                        Hands-on activities are to be used so that the teacher can observe and quickly intervene to correct and scaffold students’ efforts.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-3" >
+            <h5 class="card-header">
+                Support Collaborative Learning
+            </h5>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">In-Person Activities</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Encourage Students to Support Their Peers Onsite
+                    </li>
+                    <li class="list-group-item">
+                        Put students together to work on a common problem or task to create a sense of community and connectedness,  increasing satisfaction and motivation
+                    </li>
+                    <li class="list-group-item">
+                        Timelines for peer learning activity tasks that are performed onsite, should always  be communicated to students.
+                    </li>
+                    <li class="list-group-item">
+                        Provide enough time and direct students to wrap up a few minutes before the activity is scheduled to end.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-3" >
+            <h5 class="card-header">
+                Create Community Interaction with Onsite Discussions
+            </h5>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">In-Person Activities</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Leverage Onsite for Authentic, Face-to-Face Activities
+                    </li>
+                    <li class="list-group-item">
+                        Use role playing for creating workplace situations or interactions to encourage face-to-face interactions with peers.
+                    </li>
+                    <li class="list-group-item">
+                        Classroom discussions support unpredictability of the discussion due to the different experiences, perspectives, and knowledge that the students bring.
+                    </li>
+                    <li class="list-group-item">
+                        Onsite discussions also have the advantage of sensory richness of a physical environment.
+                    </li>
+                    <li class="list-group-item">
+                        Utilize face-to-face discussion to foster the humanness and empathy that accompanies seeing and hearing each other.
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="card mb-3" >
+            <h5 class="card-header">
+                Connect Onsite to Online to Onsite
+            </h5>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">In-Person Activities</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Use a  flipped classroom strategy where online materials prepare students for onsite, hands-on activities.
+                    </li>
+                    <li class="list-group-item">
+                        Use online quizzes or self-check to help you prepare questions for the onsite session.
+                    </li>
+                    <li class="list-group-item">
+                        Deliberately connecting and interweaving online and onsite activities creates a sense of cohesion and continuity between environments.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+        <!--This is the right side panel-->
+    <div class="col-md-4">
+        <div class="jumbotron">
+          <h1 class="display-4">Activities</h1>
+          <p class="lead">
+              When creating a course for Blended Learning. Activities should be designed that can
+              be done online and in-person. It is important to take into consideration the following
+              guidelines when creacting an activity.
+          </p>
+            <p><a href="#online" class="card-link">Online Activity Guidelines</a></p>
+            <p><a href="#inperson" class="card-link">In-Person Activity Guidelines</a></p>
+        </div>
+        <div class="list-group mb-3">
+          <button type="button" class="list-group-item list-group-item-action active">
+            Resource Links
+          </button>
+            <a type="button" href="https://www.brainpop.com/" class="list-group-item list-group-item-action">BrainPop</a>
+            <a type="button" href="https://phet.colorado.edu/" class="list-group-item list-group-item-action">PhET</a>
+            <a type="button" href="https://www.khanacademy.org/" class="list-group-item list-group-item-action">Khan Academy</a>
+            <a type="button" href="https://new.edmodo.com/" class="list-group-item list-group-item-action">Edmodo</a>
+            <a type="button" href="https://edpuzzle.com/" class="list-group-item list-group-item-action">Edpuzzle</a>
+        </div>
+        <div class="list-group mb-3">
+          <button type="button" class="list-group-item list-group-item-action active">
+            Guidelines
+          </button>
+            <a type="button" href="{% url 'framework-course-design' %}" class="list-group-item list-group-item-action">Course Design</a>
+            <a type="button" href="{% url 'framework-assessment' %}" class="list-group-item list-group-item-action">Assessment</a>
+            <a type="button" href="#" class="list-group-item list-group-item-action">Activities</a>
+            <a type="button" href="{% url 'framework-technology' %}" class="list-group-item list-group-item-action">Technology and Tools</a>
+            <a type="button" href="{% url 'framework-professional' %}" class="list-group-item list-group-item-action">Professional Development</a>
+        </div>
+    </div>
+    </div>
+
+{%  endblock content %}
