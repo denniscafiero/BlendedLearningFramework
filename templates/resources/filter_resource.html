@@ -5,25 +5,17 @@
     <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{% url "framework-home" %}">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Resources</li>
+            <li class="breadcrumb-item"><a href="{% url 'resource-home' %}">Resources</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{ filter }}</li>
           </ol>
     </nav>
     {% for resource in resources %}
+        {% if filter == resource.framework_category %}
             <div class="card mb-3" >
                 <h5 class="card-header">{{ resource.title }}</h5>
                 <div class="card-body">
                     <p>{{ resource.content }}</p>
-                    {% if resource.framework_category == 'course_design' %}
-                        <a class="btn btn-outline-primary" href="{% url 'resource-course-design' %}">{{ resource.framework_category }}</a>
-                    {% elif resource.framework_category == 'assessment'%}
-                        <a class="btn btn-outline-primary" href="{% url 'resource-assessment' %}">{{ resource.framework_category }}</a>
-                    {% elif resource.framework_category == 'activities'%}
-                        <a class="btn btn-outline-primary" href="{% url 'resource-activities' %}">{{ resource.framework_category }}</a>
-                    {% elif resource.framework_category == 'technology'%}
-                        <a class="btn btn-outline-primary" href="{% url 'resource-technology' %}">{{ resource.framework_category }}</a>
-                    {% elif resource.framework_category == 'professional_development'%}
-                        <a class="btn btn-outline-primary" href="{% url 'resource-professional-development' %}">{{ resource.framework_category }}</a>
-                    {% endif %}
+                    <button class="btn btn-outline-primary">{{ resource.framework_category }}</button>
                     <a class="btn btn-primary" href="{{ resource.site_url }}" role="button">View Site</a>
                     <a class="btn btn-primary" href="{% url 'resource-post-detail' resource.id %}" role="button">View Details</a>
                 </div>
@@ -32,6 +24,7 @@
                     User: <a class="mr-2" href="#">{{ resource.author }}</a> Date Posted: {{ resource.date_posted|date:'F d, Y' }}
                 </div>
             </div>
+        {% endif %}
     {% endfor %}
     </div>
         <!--This is the right side panel-->

@@ -1,0 +1,65 @@
+{%  extends 'blog/base.html' %}
+{% block content %}
+    <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url "framework-home" %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="{% url "resource-home" %}">Resources</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{ object.title }}</li>
+          </ol>
+    </nav>
+    <div class="card mb-3" >
+        <h5 class="card-header">{{ object.title }}</h5>
+        <div class="card-body">
+            <p>{{ object.content }}</p>
+            <a class="btn btn-primary" href="{{ object.site_url }}" role="button">View Site</a>
+        </div>
+
+        <div class="card-footer text-muted">
+            <b>Category:</b> {{ object.framework_category }} <b>Posted by User:</b> <a class="mr-2" href="#">{{ resource.author }}</a> <b>Date Posted:</b> {{ resource.date_posted|date:'F d, Y' }}
+        </div>
+    </div>
+    <div class="card mb-3" id="newcourse">
+        <div class="card-body">
+            <h4 class="card-title">Comments</h4>
+            <hr class="my-3">
+            <button class="btn btn-primary mb-4">Add Comment</button>
+            <article class="media content-section">
+              <div class="media-body">
+                <div class="article-metadata">
+                  <a class="mr-2" href="#">{{ object.author }}</a>
+                  <small class="text-muted">{{ object.date_posted|date:'F d, Y' }}</small>
+                </div>
+                <p class="article-content">Comment Line goes here</p>
+              </div>
+            </article>
+            <article class="media content-section">
+              <div class="media-body">
+                <div class="article-metadata">
+                  <a class="mr-2" href="#">{{ object.author }}</a>
+                  <small class="text-muted">{{ object.date_posted|date:'F d, Y' }}</small>
+                </div>
+                <p class="article-content">Comment Line goes here</p>
+              </div>
+            </article>
+            <article class="media content-section">
+              <div class="media-body">
+                <div class="article-metadata">
+                  <a class="mr-2" href="#">{{ object.author }}</a>
+                  <small class="text-muted">{{ object.date_posted|date:'F d, Y' }}</small>
+                </div>
+                <p class="article-content">Comment Line goes here</p>
+              </div>
+            </article>
+            <article class="media content-section">
+              <div class="media-body">
+                <div class="article-metadata">
+                  <a class="mr-2" href="#">{{ object.author }}</a>
+                  <small class="text-muted">{{ object.date_posted|date:'F d, Y' }}</small>
+                </div>
+                <p class="article-content">Comment Line goes here</p>
+              </div>
+            </article>
+        </div>
+    </div>
+
+{%  endblock content %}
