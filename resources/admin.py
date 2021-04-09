@@ -1,3 +1,6 @@
 from django.contrib import admin
+# import the .models Resource data info
+from .models import Resource
 
-# Register your models here.
+# then register the Post data with admin site
+admin.site.register(Resource)

@@ -13,7 +13,7 @@ CATEGORY_CHOICES = (
     ('professional_development','Professional development'),
 )
 
-class Resources(models.Model):
+class Resource(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     site_url = models.CharField(max_length=256) #url for the site
