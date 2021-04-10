@@ -11,6 +11,7 @@
             <p class="article-content">{{ post.content }}</p>
           </div>
         </article>
+        <a href="{% url 'post-detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
     {% endfor %}
 {%  endblock content %}
 
