@@ -22,4 +22,5 @@ urlpatterns = [
     path('professional-development', ProfessionalDevelopentResourcesListView.as_view(), name='resource-professional-development'),
     path('post/<int:pk>/', ResourceDetailView.as_view(), name='resource-post-detail'),
     path('post/new/', ResourceCreateView.as_view(), name='resource-post-create'),
+    path('post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
 ]

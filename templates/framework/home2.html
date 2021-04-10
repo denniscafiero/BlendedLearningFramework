@@ -1,68 +1,75 @@
 {%  extends 'blog/base.html' %}
+{% load static %}
 {% block content %}
     <div class="jumbotron">
       <h1 class="display-4">Blended Learning Framework</h1>
-      <p class="lead">This blended learning framework focuses on guidelines around Course Design, Activities, Mental health, Tools and Technologies and Professional
+      <p class="lead">This blended learning framework focuses on guidelines around Course Design, Activities, Assessments, Mental health, Tools and Technologies and Professional
       Development for Educators.</p>
       <hr class="my-4">
       <p>Below you will find links to download the framework Guidelines and examine resources</p>
       <p class="lead">
-          <a class="btn btn-primary btn-lg" href="{% url "blog-home" %}" role="button">Resources</a>
-          <a class="btn btn-primary btn-lg" href="#" role="button">Download PDF</a>
+          <a class="btn btn-primary btn-lg" href="{% url "resource-home" %}" role="button">Resources</a>
+          <a class="btn btn-primary btn-lg" href="{% static 'blog/BlendedlearningFramework.pdf' %}" role="button">Download PDF</a>
       </p>
     </div>
     <hr class="featurette-divider">
     <div class="row featurette">
         <div class="col-md-7">
             <h2 class="featurette-heading">Course Design. <span class="text-muted">Guidelines to help you design your courses.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <p class="lead">It is important when designing a course that you take into account the whether you are designing for an existing coruse
+            or new course. You can view the guidelines for course design by selecting the guidelines button</p>
         </div>
         <div class="col-md-5" style="text-align: center;">
-          <p><img class="rounded mx-auto d-block" data-src="holder.js/250x250/auto" alt="250x250" style="width: 250px; height: 250px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_178894a6229%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_178894a6229%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22185.1171875%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true"></p>
-          <p class="lead"><a class="btn btn-primary btn-lg" href="#" role="button">Guidelines</a></p>
+          <p><img class="rounded mx-auto d-block" data-src="holder.js/250x250/auto" alt="250x250" style="width: 250px; height: 250px;" src="{% static 'blog/coursedesign.png' %}"></p>
+          <p class="lead"><a class="btn btn-primary btn-lg" href="{%  url 'framework-course-design' %}" role="button">Guidelines</a></p>
         </div>
     </div>
     <hr class="featurette-divider">
     <div class="row featurette">
         <div class="col-md-5" style="text-align: center;">
-          <p><img class="rounded mx-auto d-block" data-src="holder.js/250x250/auto" alt="250x250" style="width: 250px; height: 250px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_178894a6229%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_178894a6229%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22185.1171875%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true"></p>
-          <p class="lead"><a class="btn btn-primary btn-lg" href="#" role="button">Guidelines</a></p>
+          <p><img class="rounded mx-auto d-block" data-src="holder.js/250x250/auto" alt="250x250" style="width: 250px; height: 250px;" src="{% static 'blog/assessment.png' %}"></p>
+          <p class="lead"><a class="btn btn-primary btn-lg" href="{% url 'framework-assessment' %}" role="button">Guidelines</a></p>
         </div>
         <div class="col-md-7">
             <h2 class="featurette-heading">Assessment. <span class="text-muted">Guidelines on lesson feedback.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <p class="lead">It is important when you have a Blended learning course that you are constantly performing assessments
+                on the understanding ouf your learners. You can click on the guidelines and examine the assessment techniques. </p>
         </div>
     </div>
     <hr class="featurette-divider">
     <div class="row featurette">
         <div class="col-md-7">
             <h2 class="featurette-heading">Activities. <span class="text-muted">Guidelines for in-person and online content.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <p class="lead">When designing a Blended learning course it is important when designing activities that you look at utilizing online activities
+            that compliment your in-person activities. You can click on teh guidelines and examine the recommendtions for handling activities
+            in a Blended Learning environment.</p>
         </div>
         <div class="col-md-5" style="text-align: center;">
-          <p><img class="rounded mx-auto d-block" data-src="holder.js/250x250/auto" alt="250x250" style="width: 250px; height: 250px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_178894a6229%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_178894a6229%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22185.1171875%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true"></p>
-          <p class="lead"><a class="btn btn-primary btn-lg" href="#" role="button">Guidelines</a></p>
+          <p><img class="rounded mx-auto d-block" data-src="holder.js/250x250/auto" alt="250x250" style="width: 250px; height: 250px;" src="{% static 'blog/activities.png' %}"></p>
+          <p class="lead"><a class="btn btn-primary btn-lg" href="{% url 'framework-activities' %}" role="button">Guidelines</a></p>
         </div>
     </div>
     <hr class="featurette-divider">
     <div class="row featurette">
         <div class="col-md-5" style="text-align: center;">
-          <p><img class="rounded mx-auto d-block" data-src="holder.js/250x250/auto" alt="250x250" style="width: 250px; height: 250px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_178894a6229%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_178894a6229%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22185.1171875%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true"></p>
-          <p class="lead"><a class="btn btn-primary btn-lg" href="#" role="button">Guidelines</a></p>
+          <p><img class="rounded mx-auto d-block" data-src="holder.js/250x250/auto" alt="250x250" style="width: 250px; height: 250px;" src="{% static 'blog/technology.png' %}"></p>
+          <p class="lead"><a class="btn btn-primary btn-lg" href="{% url 'framework-technology' %}" role="button">Guidelines</a></p>
         </div>
         <div class="col-md-7">
             <h2 class="featurette-heading">Tools and Technology. <span class="text-muted">Guidelines for selecting the right technology for your course.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <p class="lead">Determining the technology to use for your Blended learning environment requires developing a technology strategy for your
+            organization. The following guidelines will provide guidelines on technology requirements and criteria for determining the best LMS technology.</p>
         </div>
     </div>
     <hr class="featurette-divider">
     <div class="row featurette">
         <div class="col-md-7">
             <h2 class="featurette-heading">Professional Development. <span class="text-muted">Guidelines and strategies for training.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <p class="lead"> Developing a Blended learning environment requires a successful support network for continuing education and training for
+                developing Blended Learning environments. The following guidelines and resources are available in the guidelines link..</p>
         </div>
         <div class="col-md-5" style="text-align: center;">
-          <p><img class="rounded mx-auto d-block" data-src="holder.js/250x250/auto" alt="250x250" style="width: 250px; height: 250px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_178894a6229%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_178894a6229%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22185.1171875%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true"></p>
+          <p><img class="rounded mx-auto d-block" data-src="holder.js/250x250/auto" alt="250x250" style="width: 250px; height: 250px;" src="{% static 'blog/professionaldevelopment.png' %}" data-holder-rendered="true"></p>
           <p class="lead"><a class="btn btn-primary btn-lg" href="#" role="button">Guidelines</a></p>
         </div>
     </div>

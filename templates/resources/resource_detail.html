@@ -22,43 +22,18 @@
         <div class="card-body">
             <h4 class="card-title">Comments</h4>
             <hr class="my-3">
-            <button class="btn btn-primary mb-4">Add Comment</button>
-            <article class="media content-section">
-              <div class="media-body">
-                <div class="article-metadata">
-                  <a class="mr-2" href="#">{{ object.author }}</a>
-                  <small class="text-muted">{{ object.date_posted|date:'F d, Y' }}</small>
-                </div>
-                <p class="article-content">Comment Line goes here</p>
-              </div>
-            </article>
-            <article class="media content-section">
-              <div class="media-body">
-                <div class="article-metadata">
-                  <a class="mr-2" href="#">{{ object.author }}</a>
-                  <small class="text-muted">{{ object.date_posted|date:'F d, Y' }}</small>
-                </div>
-                <p class="article-content">Comment Line goes here</p>
-              </div>
-            </article>
-            <article class="media content-section">
-              <div class="media-body">
-                <div class="article-metadata">
-                  <a class="mr-2" href="#">{{ object.author }}</a>
-                  <small class="text-muted">{{ object.date_posted|date:'F d, Y' }}</small>
-                </div>
-                <p class="article-content">Comment Line goes here</p>
-              </div>
-            </article>
-            <article class="media content-section">
-              <div class="media-body">
-                <div class="article-metadata">
-                  <a class="mr-2" href="#">{{ object.author }}</a>
-                  <small class="text-muted">{{ object.date_posted|date:'F d, Y' }}</small>
-                </div>
-                <p class="article-content">Comment Line goes here</p>
-              </div>
-            </article>
+            <a class="btn btn-primary mb-4" href="{% url 'add_comment_to_post' pk=resource.pk %}">Add Comment</a>
+            <hr>
+                {% for comment in resource.comments.all %}
+                    <div class="comment">
+                        <div class="date">{{ comment.created_date }}</div>
+                        <strong>{{ comment.author }}</strong>
+                        <p>{{ comment.text|linebreaks }}</p>
+                    </div>
+                {% empty %}
+                    <p>No comments here yet :(</p>
+                {% endfor %}
+
         </div>
     </div>
 

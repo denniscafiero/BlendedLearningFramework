@@ -30,6 +30,7 @@
 
                 <div class="card-footer text-muted">
                     User: <a class="mr-2" href="#">{{ resource.author }}</a> Date Posted: {{ resource.date_posted|date:'F d, Y' }}
+                    <a href="{% url 'resource-post-detail' pk=resource.pk %}">Comments: {{ resource.comments.count }}</a>
                 </div>
             </div>
     {% endfor %}
@@ -63,12 +64,13 @@
         </div>
         <div class="jumbotron">
           <h1 class="display-4">Resources</h1>
-          <p class="lead">When designing a course or lesson for Blended Learning. These are some important guidelines that you should follow along with trhings to avoid when designing your course</p>
+          <p class="lead">When designing a course or lesson for Blended Learning you will find specific resources based on the categories below.</p>
             <p><a href="{% url 'resource-course-design' %}" class="card-link">Course Design</a></p>
             <p><a href="{% url 'resource-assessment' %}" class="card-link">Assessment</a></p>
             <p><a href="{% url 'resource-activities' %}" class="card-link">Activities</a></p>
             <p><a href="{% url 'resource-technology' %}" class="card-link">Technology and Tools</a></p>
             <p><a href="{% url 'resource-professional-development' %}" class="card-link">Professional Development</a></p>
+            <p><a href="{% url 'resource-home' %}" class="card-link">All Resources</a></p>
 
         </div>
     </div>

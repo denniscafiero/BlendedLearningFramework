@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
+from .forms import PostForm, CommentForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import (
     ListView,
@@ -27,7 +28,7 @@ class ResourceListView(ListView):
     template_name = 'resources/home.html'
     context_object_name = 'resources'
     ordering = ['-date_posted']
-    paginate_by = 2
+    paginate_by = 5
 
 class CourseDesignResourcesListView(ListView):
     #resource_info = Resource.objects.filter(framework_category='course_design')
@@ -36,7 +37,7 @@ class CourseDesignResourcesListView(ListView):
     template_name = 'resources/home.html'
     context_object_name = 'resources'
     ordering = ['-date_posted']
-    paginate_by = 2
+    paginate_by = 5
 
     def get_queryset(self):
         return Resource.objects.filter(framework_category='course_design')
@@ -58,7 +59,7 @@ class AssessmentResourcesListView(ListView):
     template_name = 'resources/home.html'
     context_object_name = 'resources'
     ordering = ['-date_posted']
-    paginate_by = 2
+    paginate_by = 5
 
     def get_queryset(self):
         return Resource.objects.filter(framework_category='assessment')
@@ -80,7 +81,7 @@ class ActivitiesResourcesListView(ListView):
     template_name = 'resources/home.html'
     context_object_name = 'resources'
     ordering = ['-date_posted']
-    paginate_by = 2
+    paginate_by = 5
 
     def get_queryset(self):
         return Resource.objects.filter(framework_category='activities')
@@ -103,7 +104,7 @@ class ProfessionalDevelopentResourcesListView(ListView):
     template_name = 'resources/home.html'
     context_object_name = 'resources'
     ordering = ['-date_posted']
-    paginate_by = 2
+    paginate_by = 5
 
     def get_queryset(self):
         return Resource.objects.filter(framework_category='professional_development')
@@ -126,7 +127,7 @@ class TechnologyResourcesListView(ListView):
     template_name = 'resources/home.html'
     context_object_name = 'resources'
     ordering = ['-date_posted']
-    paginate_by = 2
+    paginate_by = 5
 
     def get_queryset(self):
         return Resource.objects.filter(framework_category='technology')
@@ -153,3 +154,16 @@ class ResourceCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+def add_comment_to_post(request, pk):
+    post = get_object_or_404(Resource, pk=pk)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
+            return redirect('resource-post-detail', pk=post.pk)
+    else:
+        form = CommentForm()
+    return render(request, 'resources/add_comment_to_post.html', {'form': form})
