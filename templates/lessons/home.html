@@ -1,0 +1,81 @@
+{%  extends 'blog/base.html' %}
+{% block content %}
+    <div class="row">
+    <div class="col-md-8">
+    <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url "framework-home" %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Lessons</li>
+          </ol>
+    </nav>
+    {% for lesson in lessons %}
+            <div class="card mb-3" >
+                <h5 class="card-header">{{ lesson.lesson_title }}</h5>
+                <div class="card-body">
+                    <p><b>Description:</b></p>
+                    <p>{{ lesson.lesson_content }}</p>
+                    <p><b>Lesson Goals:</b></p>
+                    <p>{{ lesson.lesson_goals }}</p>
+                    {% if lesson.subject == 'Math' %}
+                        <a class="btn btn-outline-primary" href="#">{{ lesson.subject }}</a>
+                    {% elif resource.framework_category == 'Science'%}
+                        <a class="btn btn-outline-primary" href="#">{{ lesson.subject }}</a>
+                    {% elif resource.framework_category == 'English'%}
+                        <a class="btn btn-outline-primary" href="#">{{ lesson.subject }}</a>
+                    {% elif resource.framework_category == 'Social_Studies'%}
+                        <a class="btn btn-outline-primary" href="#">{{ lesson.subject }}</a>
+                    {% elif resource.framework_category == 'Other'%}
+                        <a class="btn btn-outline-primary" href="#">{{ lesson.subject }}</a>
+                    {% endif %}
+                    <a class="btn btn-outline-primary" href="#" role="button">{{ lesson.grade_level }}</a>
+                    <a class="btn btn-primary" href="{% url 'lessons-post-detail' lesson.id %}" role="button">View Lesson</a>
+                </div>
+
+                <div class="card-footer text-muted">
+                    User: <a class="mr-2" href="#">{{ lesson.author }}</a> Date Posted: {{ lesson.date_posted|date:'F d, Y' }}
+                </div>
+            </div>
+    {% endfor %}
+        {% if is_paginated %}
+
+            {% if page_obj.has_previous %}
+                <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+                <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            {% endif %}
+
+            {% for num in page_obj.paginator.page_range %}
+
+                {% if page_obj.number == num %}
+                    <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+                {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3'  %}
+                    <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+                {% endif %}
+            {%  endfor %}
+
+            {% if page_obj.has_next %}
+                <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+            {% endif %}
+
+        {% endif %}
+    </div>
+        <!--This is the right side panel-->
+    <div class="col-md-4">
+        <div class="mt-1 mb-4">
+            <a class="btn btn-primary col-md-12" href="{% url 'lessons-post-create' %}">Add Lesson</a>
+        </div>
+        <div class="jumbotron">
+          <h1 class="display-4">Lessons</h1>
+          <p class="lead">Below you will find lessons shared by the community around Blended learning. You can sort the lessons by subjects in the links below.</p>
+            <p><a href="{% url 'lessons-math' %}" class="card-link">Math</a></p>
+            <p><a href="{% url 'lessons-science' %}" class="card-link">Science</a></p>
+            <p><a href="{% url 'lessons-english' %}" class="card-link">English</a></p>
+            <p><a href="{% url 'lessons-social-studies' %}" class="card-link">Social Studies</a></p>
+            <p><a href="{% url 'lessons-other' %}" class="card-link">Other</a></p>
+            <p><a href="{% url 'lessons-home' %}" class="card-link">All Lessons</a></p>
+
+        </div>
+    </div>
+    </div>
+{%  endblock content %}
+

@@ -34,6 +34,7 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('', include('framework.urls')),
     path('resources/', include('resources.urls')),
+    path('lessons/', include('lessons.urls')),
 ]
 
 if settings.DEBUG:

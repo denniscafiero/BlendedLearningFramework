@@ -1,0 +1,154 @@
+{%  extends 'blog/base.html' %}
+{% block content %}
+    <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url "framework-home" %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="{% url "lessons-home" %}">Lessons</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{ object.lesson_title }}</li>
+          </ol>
+    </nav>
+    <div class="card mb-3" >
+        <h5 class="card-header">{{ object.lesson_title }}</h5>
+        <div class="card-body">
+            <p><b>Number of days in Lesson: </b> {{ object.days_in_lesson }}</p>
+            <p><b>Introduction:</b></p>
+            <p>{{ object.lesson_class_introduction }}</p>
+        </div>
+
+        <div class="card-footer text-muted">
+            <b>Subject:</b> {{ object.subject }}  <b>Grade Level:</b> {{ object.grade_level }} <br>
+            <b>Posted by User: </b> <a class="mr-2" href="#">{{ object.author }}</a> <b>Date Posted:</b> {{ object.date_posted|date:'F d, Y' }}
+        </div>
+    </div>
+    {% if object.days_in_lesson >= '1' %}
+        <div class="card mb-3" >
+            <h5 class="card-header">Lesson Day One</h5>
+            <div class="card-body">
+                <p><b>Description:</b></p>
+                <p>{{ object.lesson_day_one_description }}</p>
+                <p><b>Lesson Links:</b></p>
+                {% if object.day_one_url_1 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_one_url_1 }}">Link 1 </a>
+                {% endif %}
+                {% if object.day_one_url_2 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_one_url_2 }}">Link 2 </a>
+                {% endif %}
+                {% if object.day_one_url_3 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_one_url_3 }}">Link 3 </a>
+                {% endif %}
+                {% if object.day_one_url_4 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_one_url_4 }}">Link 4 </a>
+                {% endif %}
+            </div>
+
+            <div class="card-footer text-muted">
+                <b>Location:</b> {{  object.location_day_one }}
+            </div>
+        </div>
+    {% endif %}
+    {% if object.days_in_lesson >= '2' %}
+        <div class="card mb-3" >
+            <h5 class="card-header">Lesson Day Two</h5>
+            <div class="card-body">
+                <p><b>Description:</b></p>
+                <p>{{ object.lesson_day_two_description }}</p>
+                <p><b>Lesson Links:</b></p>
+                {% if object.day_two_url_1 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_two_url_1 }}">Link 1 </a>
+                {% endif %}
+                {% if object.day_two_url_2 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_two_url_2 }}">Link 2 </a>
+                {% endif %}
+                {% if object.day_two_url_3 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_two_url_3 }}">Link 3 </a>
+                {% endif %}
+                {% if object.day_two_url_4 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_two_url_4 }}">Link 4 </a>
+                {% endif %}
+            </div>
+
+            <div class="card-footer text-muted">
+                <b>Location:</b> {{  object.location_day_two }}
+            </div>
+        </div>
+    {% endif %}
+    {% if object.days_in_lesson >= '3' %}
+        <div class="card mb-3" >
+            <h5 class="card-header">Lesson Day Three</h5>
+            <div class="card-body">
+                <p><b>Description:</b></p>
+                <p>{{ object.lesson_day_three_description }}</p>
+                <p><b>Lesson Links:</b></p>
+                {% if object.day_three_url_1 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_three_url_1 }}">Link 1 </a>
+                {% endif %}
+                {% if object.day_three_url_2 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_three_url_2 }}">Link 2 </a>
+                {% endif %}
+                {% if object.day_three_url_3 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_three_url_3 }}">Link 3 </a>
+                {% endif %}
+                {% if object.day_three_url_4 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_three_url_4 }}">Link 4 </a>
+                {% endif %}
+            </div>
+
+            <div class="card-footer text-muted">
+                <b>Location:</b> {{  object.location_day_three }}
+            </div>
+        </div>
+    {% endif %}
+    {% if object.days_in_lesson >= '4' %}
+        <div class="card mb-3" >
+            <h5 class="card-header">Lesson Day One</h5>
+            <div class="card-body">
+                <p><b>Description:</b></p>
+                <p>{{ object.lesson_day_four_description }}</p>
+                <p><b>Lesson Links:</b></p>
+                {% if object.day_four_url_1 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_four_url_1 }}">Link 1 </a>
+                {% endif %}
+                {% if object.day_four_url_2 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_four_url_2 }}">Link 2 </a>
+                {% endif %}
+                {% if object.day_four_url_3 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_four_url_3 }}">Link 3 </a>
+                {% endif %}
+                {% if object.day_four_url_4 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_four_url_4 }}">Link 4 </a>
+                {% endif %}
+            </div>
+
+            <div class="card-footer text-muted">
+                <b>Location:</b> {{  object.location_day_four }}
+            </div>
+        </div>
+    {% endif %}
+    {% if object.days_in_lesson >= '5' %}
+        <div class="card mb-3" >
+            <h5 class="card-header">Lesson Day Five</h5>
+            <div class="card-body">
+                <p><b>Description:</b></p>
+                <p>{{ object.lesson_day_five_description }}</p>
+                <p><b>Lesson Links:</b></p>
+                {% if object.day_five_url_1 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_five_url_1 }}">Link 1 </a>
+                {% endif %}
+                {% if object.day_five_url_2 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_five_url_2 }}">Link 2 </a>
+                {% endif %}
+                {% if object.day_five_url_3 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_five_url_3 }}">Link 3 </a>
+                {% endif %}
+                {% if object.day_five_url_4 != '' %}
+                    <a class="btn btn-outline-primary" href="{{ object.day_five_url_4 }}">Link 4 </a>
+                {% endif %}
+            </div>
+
+            <div class="card-footer text-muted">
+                <b>Location:</b> {{  object.location_day_five }}
+            </div>
+        </div>
+    {% endif %}
+
+{%  endblock content %}
